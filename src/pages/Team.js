@@ -2,6 +2,9 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import styles from '../styles/pages/Team.module.css';
+import team1Image from '../assets/images/team1.webp';
+import team2Image from '../assets/images/team2.jpg';
+
 
 const Team = () => {
   const team = [
@@ -9,14 +12,14 @@ const Team = () => {
       id: 1,
       name: "Annie",
       role: "CEO & Founder",
-      image: "/assets/images/team1.jpg",
+      image: team1Image,
       bio: "Expert in IT automation and business solutions"
     },
     {
       id: 2,
       name: "DJ",
       role: "Lead Developer",
-      image: "/assets/images/team2.jpg",
+      image: team2Image,
       bio: "Power Apps specialist with 8+ years experience"
     },
     // Add more team members

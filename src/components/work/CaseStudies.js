@@ -5,6 +5,10 @@ import ScrollAnimation from '../common/ScrollAnimation';
 import styles from './CaseStudies.module.css';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import caseStudy1Image from '../../assets/images/case-study-1.jpg';
+import caseStudy2Image from '../../assets/images/case-study-2.jpg';
+import caseStudy3Image from '../../assets/images/case-study-3.jpg';
+import caseStudy4Image from '../../assets/images/case-study-4.jpg';
 
 const CaseStudies = () => {
   const [activeStudy, setActiveStudy] = useState(null);
@@ -36,7 +40,7 @@ const CaseStudies = () => {
         costs: "-40%",
         productivity: "+60%"
       },
-      image: "/assets/images/case-study-1.jpg",
+      image: caseStudy1Image,
       testimonial: {
         quote: "The automation solution transformed our operations completely.",
         author: "John Smith",
@@ -55,7 +59,7 @@ const CaseStudies = () => {
         accuracy: "+95%",
         patientCare: "+70%"
       },
-      image: "/assets/images/case-study-2.jpg",
+      image: caseStudy2Image,
       testimonial: {
         quote: "The analytics platform has revolutionized how we handle patient care and decision-making.",
         author: "Dr. Sarah Johnson",
@@ -74,7 +78,7 @@ const CaseStudies = () => {
         costs: "-55%",
         customerSatisfaction: "+80%"
       },
-      image: "/assets/images/case-study-3.jpg",
+      image: caseStudy3Image,
       testimonial: {
         quote: "This digital transformation has positioned us as a leader in modern banking solutions.",
         author: "Michael Chen",
@@ -93,7 +97,7 @@ const CaseStudies = () => {
         revenue: "+150%",
         userEngagement: "+85%"
       },
-      image: "/assets/images/case-study-4.jpg",
+      image: caseStudy4Image,
       testimonial: {
         quote: "Our online sales have skyrocketed since implementing the new platform.",
         author: "Emma Thompson",
@@ -103,12 +107,13 @@ const CaseStudies = () => {
   ];
 
   // Custom navigation buttons
-  const CustomPrevArrow = ({ onClick }) => {
-    return currentSlide === 0 ? null : (
+  const CustomPrevArrow = ({ onClick, currentSlide }) => {
+    return (
       <button
-        className={`${styles.navButton} ${styles.prevButton}`}
+        className={`${styles.navButton} ${styles.prevButton} ${currentSlide === 0 ? styles.hidden : ''}`}
         onClick={onClick}
         aria-label="Previous"
+        disabled={currentSlide === 0}
       >
         <svg 
           width="24" 
@@ -128,14 +133,15 @@ const CaseStudies = () => {
       </button>
     );
   };
-
-  const CustomNextArrow = ({ onClick }) => {
-    const isLastSlide = currentSlide === caseStudies.length - sliderSettings.slidesToShow;
-    return isLastSlide ? null : (
+  
+  const CustomNextArrow = ({ onClick, currentSlide, slideCount, slidesToShow }) => {
+    const isLastSlide = currentSlide + slidesToShow >= slideCount;
+    return (
       <button
-        className={`${styles.navButton} ${styles.nextButton}`}
+        className={`${styles.navButton} ${styles.nextButton} ${isLastSlide ? styles.hidden : ''}`}
         onClick={onClick}
         aria-label="Next"
+        disabled={isLastSlide}
       >
         <svg 
           width="24" 
@@ -155,31 +161,43 @@ const CaseStudies = () => {
       </button>
     );
   };
+  
 
   // Carousel settings
   const sliderSettings = {
     dots: true,
     infinite: false,
     speed: 500,
-    slidesToShow: 1,
+    slidesToShow: 3, // Show 3 cards on desktop
     slidesToScroll: 1,
     autoplay: false,
     arrows: true,
+    prevArrow: <CustomPrevArrow />,
+    nextArrow: <CustomNextArrow />,
     responsive: [
       {
-        breakpoint: 768,
+        breakpoint: 1024, // Medium screens
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          infinite: false,
+          dots: true
+        }
+      },
+      {
+        breakpoint: 768, // Mobile screens
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
           infinite: false,
           dots: true,
           arrows: true,
-          adaptiveHeight: true,
-          centerMode: false
+          adaptiveHeight: true
         }
       }
     ]
-  };  
+  };
+  
 
   // Render results function
   const renderResults = (results) => (

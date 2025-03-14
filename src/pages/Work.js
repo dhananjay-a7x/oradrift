@@ -2,6 +2,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import styles from '../styles/pages/Work.module.css';
+import project1Image from '../assets/images/project1.jpg';
+import project2Image from '../assets/images/project2.jpg';
 
 const Work = () => {
   const projects = [
@@ -9,14 +11,14 @@ const Work = () => {
       id: 1,
       title: "Business Process Automation",
       description: "Automated workflow system for small retail business",
-      image: "/assets/images/project1.jpg",
+      image: project1Image,
       tags: ["Power Apps", "Automation"]
     },
     {
       id: 2,
       title: "Inventory Management",
       description: "Custom inventory tracking solution",
-      image: "/assets/images/project2.jpg",
+      image: project2Image,
       tags: ["Power Apps", "Database"]
     },
     // Add more projects as needed

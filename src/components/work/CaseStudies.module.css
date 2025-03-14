@@ -212,10 +212,8 @@
     }
     
     .studiesGrid {
-      grid-template-columns: 1fr;
-      padding: 0;
-      margin: 0;
-      display: block; /* Add this */
+      position: relative;
+      margin: 0 -15px;
     }
     
     /* Fix slider visibility */
@@ -236,6 +234,7 @@
     }
     
     :global(.slick-slide) {
+      padding: 0 10px;
       display: block !important;
       visibility: visible !important;
     }
@@ -243,8 +242,9 @@
     /* Ensure container doesn't hide content */
     .container {
       overflow: visible !important;
+      max-width: 1200px;
+      margin: 0 auto;
       padding: 0 20px;
-      width: 100%;
     }
   }
   
@@ -273,23 +273,26 @@
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    z-index: 2;
-    background: rgba(255, 255, 255, 0.9);
-    border: none;
+    z-index: 1;
+    background: white;
+    border: 1px solid #eee;
+    border-radius: 50%;
     width: 40px;
     height: 40px;
-    border-radius: 50%;
-    cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
     transition: all 0.3s ease;
   }
-  
+
   .navButton:hover {
-    background: rgba(255, 255, 255, 1);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    background: #f5f5f5;
+  }
+
+  .navButton.hidden {
+    opacity: 0;
+    pointer-events: none;
   }
   
   .navButton svg {
@@ -299,25 +302,15 @@
   }
   
   .prevButton {
-    left: -20px; /* Position at the edge of the first card */
+    left: -20px;
   }
   
   .nextButton {
-    right: -20px; /* Position at the edge of the last card */
+    right: -20px;
   }
   
-  /* Container adjustments */
-  .studiesGrid {
-    position: relative;
-    padding: 0 20px; /* Add padding to accommodate the arrows */
-    margin: 0 auto;
-    max-width: 100%;
-    overflow: hidden;
-  }
-  
-  /* Ensure cards have proper spacing */
   .studyCard {
-    margin: 0 10px;
+    margin: 0 15px;
   }
   
   /* Responsive adjustments */
