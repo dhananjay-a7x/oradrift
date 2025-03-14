@@ -11,7 +11,6 @@ import Team from './pages/Team';
 import Contact from './pages/Contact';
 import PricingSection from './components/pricing/PricingSection';
 import FAQ from './components/home/FAQ';
-import BlogGrid from './components/blog/BlogGrid';
 import './styles/global.css';
 
 function App() {
