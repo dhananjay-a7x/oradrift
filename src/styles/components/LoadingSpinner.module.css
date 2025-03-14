@@ -1,20 +1,60 @@
-.spinnerContainer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 200px;
+/* src/components/common/Loading/LoadingSpinner.module.css */
+.spinner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  animation: bounce 0.5s ease-in-out infinite;
+}
+
+.dot:nth-child(2) {
+  animation-delay: 0.1s;
+}
+
+.dot:nth-child(3) {
+  animation-delay: 0.2s;
+}
+
+/* Sizes */
+.small .dot {
+  width: 6px;
+  height: 6px;
+}
+
+.medium .dot {
+  width: 8px;
+  height: 8px;
+}
+
+.large .dot {
+  width: 10px;
+  height: 10px;
+}
+
+/* Colors */
+.primary .dot {
+  background-color: var(--primary);
+}
+
+.secondary .dot {
+  background-color: var(--secondary);
+}
+
+.light .dot {
+  background-color: var(--surface);
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
   }
-  
-  .spinner {
-    width: 40px;
-    height: 40px;
-    border: 4px solid var(--background);
-    border-top: 4px solid var(--primary);
-    border-radius: 50%;
-    animation: spin 1s linear infinite;
+  50% {
+    transform: translateY(-10px);
   }
-  
-  @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-  }
+}

@@ -1,0 +1,196 @@
+/* src/components/blog/BlogGrid.module.css */
+.blogSection {
+    padding: var(--spacing-2xl) 0;
+    background: var(--background);
+  }
+  
+  .container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 var(--spacing-xl);
+  }
+  
+  .header {
+    text-align: center;
+    margin-bottom: var(--spacing-2xl);
+  }
+  
+  .header h2 {
+    font-size: var(--font-size-4xl);
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-md);
+  }
+  
+  .header p {
+    color: var(--text-secondary);
+    font-size: var(--font-size-lg);
+  }
+  
+  .filters {
+    margin-bottom: var(--spacing-2xl);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+  }
+  
+  .categories {
+    display: flex;
+    gap: var(--spacing-md);
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .categoryButton {
+    padding: var(--spacing-sm) var(--spacing-lg);
+    border: 2px solid var(--primary);
+    border-radius: var(--border-radius-full);
+    background: transparent;
+    color: var(--primary);
+    font-weight: 500;
+    cursor: pointer;
+    transition: all var(--transition-normal);
+  }
+  
+  .categoryButton:hover,
+  .categoryButton.active {
+    background: var(--primary);
+    color: var(--surface);
+  }
+  
+  .blogGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: var(--spacing-xl);
+  }
+  
+  .blogCard {
+    background: var(--surface);
+    border-radius: var(--border-radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    transition: all var(--transition-normal);
+  }
+  
+  .blogCard:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+  }
+  
+  .imageContainer {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+  }
+  
+  .imageContainer img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-normal);
+  }
+  
+  .blogCard:hover .imageContainer img {
+    transform: scale(1.05);
+  }
+  
+  .category {
+    position: absolute;
+    top: var(--spacing-md);
+    right: var(--spacing-md);
+    padding: var(--spacing-xs) var(--spacing-sm);
+    background: var(--primary);
+    color: var(--surface);
+    border-radius: var(--border-radius-full);
+    font-size: var(--font-size-sm);
+    font-weight: 500;
+  }
+  
+  .content {
+    padding: var(--spacing-lg);
+  }
+  
+  .meta {
+    display: flex;
+    gap: var(--spacing-md);
+    color: var(--text-secondary);
+    font-size: var(--font-size-sm);
+    margin-bottom: var(--spacing-md);
+  }
+  
+  .content h3 {
+    font-size: var(--font-size-xl);
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-sm);
+    line-height: 1.4;
+  }
+  
+  .content p {
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-lg);
+    line-height: 1.6;
+  }
+  
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+  }
+  
+  .author {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+  }
+  
+  .author img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+  .author span {
+    color: var(--text-secondary);
+    font-size: var(--font-size-sm);
+  }
+  
+  .readMore {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    transition: all var(--transition-normal);
+  }
+  
+  .arrow {
+    transition: transform var(--transition-normal);
+  }
+  
+  .readMore:hover .arrow {
+    transform: translateX(5px);
+  }
+  
+  .noResults {
+    text-align: center;
+    padding: var(--spacing-2xl);
+    color: var(--text-secondary);
+  }
+  
+  @media (max-width: 768px) {
+    .blogGrid {
+      grid-template-columns: 1fr;
+    }
+  
+    .categories {
+      justify-content: flex-start;
+      overflow-x: auto;
+      padding-bottom: var(--spacing-sm);
+    }
+  
+    .categoryButton {
+      flex-shrink: 0;
+    }
+  }

@@ -1,0 +1,127 @@
+/* src/components/common/CTA.module.css */
+.cta {
+    padding: var(--spacing-2xl) 0;
+    background: var(--background);
+  }
+  
+  .container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 var(--spacing-xl);
+    position: relative;
+    z-index: 1;
+  }
+  
+  .content {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .content h2 {
+    font-size: var(--font-size-3xl);
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-lg);
+  }
+  
+  .content p {
+    font-size: var(--font-size-lg);
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-xl);
+    line-height: 1.6;
+  }
+  
+  .ctaButton {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-md) var(--spacing-xl);
+    background: var(--primary);
+    color: var(--surface);
+    border-radius: var(--border-radius-full);
+    text-decoration: none;
+    font-weight: 500;
+    transition: all var(--transition-normal);
+  }
+  
+  .ctaButton:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+  }
+  
+  .arrow {
+    transition: transform var(--transition-normal);
+  }
+  
+  .ctaButton:hover .arrow {
+    transform: translateX(5px);
+  }
+  
+  .withBg {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+  }
+  
+  .withBg .content h2,
+  .withBg .content p {
+    color: var(--surface);
+  }
+  
+  .withBg .ctaButton {
+    background: var(--surface);
+    color: var(--primary);
+  }
+  
+  .backgroundElements {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+  }
+  
+  .circle1,
+  .circle2 {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+  }
+  
+  .circle1 {
+    width: 300px;
+    height: 300px;
+    top: -150px;
+    right: -100px;
+  }
+  
+  .circle2 {
+    width: 200px;
+    height: 200px;
+    bottom: -100px;
+    left: -50px;
+  }
+  
+  .dots {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(
+      rgba(255, 255, 255, 0.1) 1px,
+      transparent 1px
+    );
+    background-size: 20px 20px;
+  }
+  
+  @media (max-width: 768px) {
+    .content h2 {
+      font-size: var(--font-size-2xl);
+    }
+  
+    .content p {
+      font-size: var(--font-size-md);
+    }
+  
+    .backgroundElements {
+      display: none;
+    }
+  }

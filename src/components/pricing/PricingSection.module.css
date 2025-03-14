@@ -1,0 +1,246 @@
+/* src/components/pricing/PricingSection.module.css */
+.pricing {
+    padding: var(--spacing-2xl) 0;
+    background: var(--background);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .heroSection {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: var(--text-light);
+    padding: 100px var(--container-padding) 60px;
+  }
+  
+  .container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 var(--spacing-xl);
+    position: relative;
+    z-index: 1;
+  }
+  
+  .header {
+    text-align: center;
+    margin-bottom: var(--spacing-2xl);
+  }
+  
+  .header h2 {
+    font-size: var(--font-size-4xl);
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-md);
+  }
+  
+  .header p {
+    color: var(--text-secondary);
+    font-size: var(--font-size-lg);
+    margin-bottom: var(--spacing-xl);
+  }
+  
+  .billingToggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-xl);
+  }
+  
+  .toggle {
+    width: 50px;
+    height: 28px;
+    background: var(--primary);
+    border-radius: 14px;
+    padding: 3px;
+    border: none;
+    cursor: pointer;
+    position: relative;
+  }
+  
+  .toggleHandle {
+    width: 22px;
+    height: 22px;
+    background: white;
+    border-radius: 50%;
+  }
+  
+  .billingToggle span {
+    color: var(--text-secondary);
+    transition: color var(--transition-normal);
+  }
+  
+  .billingToggle span.active {
+    color: var(--text-primary);
+    font-weight: 500;
+  }
+  
+  .discount {
+    margin-left: var(--spacing-xs);
+    padding: 2px 6px;
+    background: var(--primary);
+    color: white;
+    border-radius: var(--border-radius-full);
+    font-size: var(--font-size-xs);
+    font-weight: 500;
+  }
+  
+  .plansGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-xl);
+    margin-bottom: var(--spacing-2xl);
+  }
+  
+  .planCard {
+    background: var(--surface);
+    border-radius: var(--border-radius-lg);
+    padding: var(--spacing-xl);
+    position: relative;
+    transition: all var(--transition-normal);
+  }
+  
+  .popularBadge {
+    position: absolute;
+    top: var(--spacing-md);
+    right: var(--spacing-md);
+    background: var(--primary);
+    color: white;
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: var(--border-radius-full);
+    font-size: var(--font-size-sm);
+    font-weight: 500;
+  }
+  
+  .planHeader {
+    text-align: center;
+    margin-bottom: var(--spacing-xl);
+  }
+  
+  .planHeader h3 {
+    font-size: var(--font-size-xl);
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-sm);
+  }
+  
+  .planHeader p {
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-lg);
+  }
+  
+  .price {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 2px;
+  }
+  
+  .currency {
+    font-size: var(--font-size-xl);
+    color: var(--text-primary);
+  }
+  
+  .amount {
+    font-size: var(--font-size-4xl);
+    font-weight: 700;
+    color: var(--text-primary);
+  }
+  
+  .period {
+    color: var(--text-secondary);
+    font-size: var(--font-size-sm);
+  }
+  
+  .features {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    margin-bottom: var(--spacing-xl);
+  }
+  
+  .features li {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-sm) 0;
+    color: var(--text-primary);
+  }
+  
+  .features li.disabled {
+    color: var(--text-secondary);
+    text-decoration: line-through;
+  }
+  
+  .checkmark {
+    color: var(--primary);
+    font-weight: bold;
+  }
+  
+  .disabled .checkmark {
+    color: var(--text-secondary);
+  }
+  
+  .ctaButton {
+    width: 100%;
+    padding: var(--spacing-md);
+    border: none;
+    border-radius: var(--border-radius-full);
+    font-weight: 500;
+    cursor: pointer;
+    transition: all var(--transition-normal);
+  }
+  
+  .primary {
+    background: var(--primary);
+    color: white;
+  }
+  
+  .secondary {
+    background: transparent;
+    border: 2px solid var(--primary);
+    color: var(--primary);
+  }
+  
+  .primary:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+  }
+  
+  .secondary:hover {
+    background: var(--primary);
+    color: white;
+    transform: translateY(-2px);
+  }
+  
+  .guarantee {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-lg);
+    background: var(--surface);
+    padding: var(--spacing-xl);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-md);
+  }
+  
+  .guaranteeIcon {
+    font-size: var(--font-size-3xl);
+  }
+  
+  .guaranteeContent h4 {
+    font-size: var(--font-size-lg);
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-xs);
+  }
+  
+  .guaranteeContent p {
+    color: var(--text-secondary);
+  }
+  
+  @media (max-width: 768px) {
+    .plansGrid {
+      grid-template-columns: 1fr;
+    }
+  
+    .guarantee {
+      flex-direction: column;
+      text-align: center;
+    }
+  }

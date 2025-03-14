@@ -1,0 +1,311 @@
+/* src/components/work/CaseStudies.module.css */
+.caseStudies {
+    padding: var(--spacing-2xl) 0;
+    background: var(--background);
+  }
+  
+  .container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 var(--spacing-xl);
+  }
+  
+  .header {
+    text-align: center;
+    margin-bottom: var(--spacing-2xl);
+  }
+  
+  .header h2 {
+    font-size: var(--font-size-4xl);
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-md);
+  }
+  
+  .header p {
+    color: var(--text-secondary);
+    font-size: var(--font-size-lg);
+  }
+  
+  .studiesGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: var(--spacing-xl);
+  }
+  
+  .studyCard {
+    background: var(--surface);
+    border-radius: var(--border-radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    transition: all var(--transition-normal);
+    cursor: pointer;
+  }
+  
+  .studyCard:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+  }
+  
+  .studyImage {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+  }
+  
+  .studyImage img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-normal);
+  }
+  
+  .studyCard:hover .studyImage img {
+    transform: scale(1.05);
+  }
+  
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+      to bottom,
+      transparent,
+      rgba(0, 0, 0, 0.7)
+    );
+    display: flex;
+    align-items: flex-end;
+    padding: var(--spacing-md);
+  }
+  
+  .industry {
+    background: var(--primary);
+    color: var(--surface);
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: var(--border-radius-full);
+    font-size: var(--font-size-sm);
+    font-weight: 500;
+  }
+  
+  .studyContent {
+    padding: var(--spacing-lg);
+  }
+  
+  .studyContent h3 {
+    font-size: var(--font-size-xl);
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-sm);
+  }
+  
+  .client {
+    color: var(--text-secondary);
+    font-size: var(--font-size-md);
+    margin-bottom: var(--spacing-lg);
+  }
+  
+  .expandedContent {
+    overflow: hidden;
+  }
+  
+  .section {
+    margin-bottom: var(--spacing-lg);
+  }
+  
+  .section h4 {
+    color: var(--primary);
+    font-size: var(--font-size-lg);
+    margin-bottom: var(--spacing-sm);
+  }
+  
+  .section p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+  }
+  
+  .results {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
+    padding: var(--spacing-md);
+    background: var(--background);
+    border-radius: var(--border-radius-md);
+  }
+  
+  .resultItem {
+    text-align: center;
+  }
+  
+  .resultValue {
+    display: block;
+    font-size: var(--font-size-2xl);
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: var(--spacing-xs);
+  }
+  
+  .resultLabel {
+    font-size: var(--font-size-sm);
+    color: var(--text-secondary);
+  }
+  
+  .testimonial {
+    padding: var(--spacing-lg);
+    background: var(--background);
+    border-radius: var(--border-radius-md);
+    margin-bottom: var(--spacing-lg);
+  }
+  
+  .testimonial blockquote {
+    font-style: italic;
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-md);
+    line-height: 1.6;
+  }
+  
+  .author {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .author span:first-child {
+    font-weight: 500;
+    color: var(--text-primary);
+  }
+  
+  .author span:last-child {
+    font-size: var(--font-size-sm);
+    color: var(--text-secondary);
+  }
+  
+  .expandButton {
+    width: 100%;
+    padding: var(--spacing-sm) var(--spacing-md);
+    background: transparent;
+    border: 2px solid var(--primary);
+    color: var(--primary);
+    border-radius: var(--border-radius-full);
+    font-weight: 500;
+    cursor: pointer;
+    transition: all var(--transition-normal);
+  }
+  
+  .expandButton:hover {
+    background: var(--primary);
+    color: var(--surface);
+  }
+  
+  .studyCard.active {
+    transform: scale(1.02);
+  }
+  
+  @media (max-width: 768px) {
+    .studiesGrid {
+      grid-template-columns: 1fr;
+    }
+  
+    .results {
+      grid-template-columns: 1fr;
+    }
+
+    .studiesGrid {
+      margin: 0 -10px;
+    }
+  
+    .studiesGrid :global(.slick-slide) {
+      padding: 0 10px;
+    }
+  }
+  .navButton {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    background: rgba(255, 255, 255, 0.9);
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+  }
+  
+  .navButton:hover {
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+  
+  .navButton svg {
+    width: 24px;
+    height: 24px;
+    color: #333;
+  }
+  
+  .prevButton {
+    left: -20px; /* Position at the edge of the first card */
+  }
+  
+  .nextButton {
+    right: -20px; /* Position at the edge of the last card */
+  }
+  
+  /* Container adjustments */
+  .studiesGrid {
+    position: relative;
+    padding: 0 20px; /* Add padding to accommodate the arrows */
+    margin: 0 auto;
+    max-width: 100%;
+    overflow: hidden;
+  }
+  
+  /* Ensure cards have proper spacing */
+  .studyCard {
+    margin: 0 10px;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .navButton {
+      width: 36px;
+      height: 36px;
+    }
+  
+    .navButton svg {
+      width: 20px;
+      height: 20px;
+    }
+  
+    .prevButton {
+      left: -18px;
+    }
+  
+    .nextButton {
+      right: -18px;
+    }
+  }
+  
+  /* Optional: Add smooth transitions for the cards */
+  .studiesGrid :global(.slick-slide) {
+    transition: opacity 0.3s ease;
+  }
+  
+  /* Optional: Style active slide */
+  .studiesGrid :global(.slick-current) {
+    opacity: 1;
+  }
+  
+  /* Ensure proper overflow handling */
+  .container {
+    overflow: visible;
+    padding: 0 20px;
+  }
+  
+  /* Optional: Add hover effect to navigation buttons */
+  .navButton:active {
+    transform: translateY(-50%) scale(0.95);
+  }

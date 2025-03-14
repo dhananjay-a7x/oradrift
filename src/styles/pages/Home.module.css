@@ -1,38 +1,122 @@
+/* src/styles/pages/Home.module.css */
 .home {
-    min-height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.hero {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #f0f9ff 0%, #e6f3ff 100%);
+  padding: 2rem;
+}
+
+.heroContent {
+  max-width: 1200px;
+  text-align: center;
+  padding: 2rem;
+}
+
+.heroContent h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1.5rem;
+  color: #1a1a1a;
+}
+
+.heroContent p {
+  font-size: 1.25rem;
+  color: #4a5568;
+  margin-bottom: 2rem;
+}
+
+.ctaButtons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.primaryButton, .secondaryButton {
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.primaryButton {
+  background-color: #3182ce;
+  color: white;
+}
+
+.secondaryButton {
+  background-color: transparent;
+  border: 2px solid #3182ce;
+  color: #3182ce;
+}
+
+.stats {
+  padding: 4rem 2rem;
+  background-color: white;
+}
+
+.statsContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  text-align: center;
+}
+
+.statItem h3 {
+  font-size: 2.5rem;
+  color: #3182ce;
+  margin-bottom: 0.5rem;
+}
+
+.caseStudy {
+  padding: 4rem 2rem;
+  background-color: #f7fafc;
+}
+
+.caseStudyContent {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.cta {
+  padding: 4rem 2rem;
+  background-color: var(--surface);
+  text-align: center;
+}
+
+.ctaContent {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.ctaButton {
+  display: inline-block;
+  padding: 1rem 2rem;
+  background-color: #3182ce;
+  color: white;
+  border-radius: 8px;
+  font-weight: 600;
+  margin-top: 2rem;
+  transition: all 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .heroContent h1 {
+    font-size: 2.5rem;
   }
-  
-  .section {
-    padding: var(--spacing-xl) 0;
+
+  .caseStudyContent {
+    grid-template-columns: 1fr;
   }
-  
-  .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 var(--spacing-md);
-  }
-  
-  .heroSection {
-    background: linear-gradient(135deg, var(--primary), var(--secondary));
-    color: var(--text-light);
-    text-align: center;
-    padding: calc(var(--spacing-xl) * 2) 0;
-  }
-  
-  .featuresSection {
-    background: var(--background);
-    padding: var(--spacing-xl) 0;
-  }
-  
-  .ctaSection {
-    background: var(--primary);
-    color: var(--text-light);
-    text-align: center;
-    padding: var(--spacing-xl) 0;
-  }
-  
-  @media (max-width: 768px) {
-    .section {
-      padding: var(--spacing-lg) 0;
-    }
-  }
+}

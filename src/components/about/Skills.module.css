@@ -1,0 +1,64 @@
+/* src/components/about/Skills.module.css */
+.skills {
+    padding: var(--spacing-2xl) 0;
+    background: var(--background);
+  }
+  
+  .container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 var(--spacing-xl);
+  }
+  
+  .sectionHeader {
+    text-align: center;
+    margin-bottom: var(--spacing-2xl);
+  }
+  
+  .sectionHeader h2 {
+    font-size: var(--font-size-4xl);
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-md);
+  }
+  
+  .sectionHeader p {
+    color: var(--text-secondary);
+    font-size: var(--font-size-lg);
+  }
+  
+  .skillsGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-2xl);
+    align-items: center;
+  }
+  
+  .skillsList {
+    padding-right: var(--spacing-xl);
+  }
+  
+  .skillsImage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .skillsImage img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  @media (max-width: 768px) {
+    .skillsGrid {
+      grid-template-columns: 1fr;
+    }
+  
+    .skillsList {
+      padding-right: 0;
+    }
+  
+    .skillsImage {
+      order: -1;
+      margin-bottom: var(--spacing-xl);
+    }
+  }

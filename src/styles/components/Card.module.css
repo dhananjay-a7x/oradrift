@@ -1,0 +1,76 @@
+
+/* src/components/common/Card.module.css */
+.card {
+    background: var(--surface);
+    border-radius: var(--border-radius-lg);
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .hover {
+    transition: all var(--transition-normal);
+  }
+  
+  .hover:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+  }
+  
+  .default {
+    box-shadow: var(--shadow-sm);
+  }
+  
+  .elevated {
+    box-shadow: var(--shadow-md);
+  }
+  
+  .bordered {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  
+  .gradient {
+    background: var(--gradient-surface);
+  }
+  
+  .cardHeader {
+    padding: var(--spacing-lg);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  
+  .cardBody {
+    padding: var(--spacing-lg);
+  }
+  
+  .cardFooter {
+    padding: var(--spacing-lg);
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    background: rgba(0, 0, 0, 0.02);
+  }
+  
+  /* Card variations */
+  .primary {
+    background: var(--primary);
+    color: var(--surface);
+  }
+  
+  .secondary {
+    background: var(--secondary);
+    color: var(--surface);
+  }
+  
+  /* Example usage of the card with image */
+  .imageCard {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .imageCard img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: transform var(--transition-normal);
+  }
+  
+  .imageCard:hover img {
+    transform: scale(1.05);
+  }

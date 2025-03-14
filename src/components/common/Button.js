@@ -1,14 +1,36 @@
+// src/components/common/Button.js
 import React from 'react';
 import styles from '../../styles/components/Button.module.css';
 
-const Button = ({ children, variant = 'primary', onClick, type = 'button' }) => {
+const Button = ({ 
+  children, 
+  variant = 'primary', 
+  size = 'medium', 
+  fullWidth = false,
+  loading = false,
+  disabled = false,
+  onClick,
+  type = 'button',
+  className = '',
+}) => {
   return (
     <button
-      className={`${styles.button} ${styles[variant]}`}
-      onClick={onClick}
       type={type}
+      onClick={onClick}
+      disabled={disabled || loading}
+      className={`
+        ${styles.button}
+        ${styles[variant]}
+        ${styles[size]}
+        ${fullWidth ? styles.fullWidth : ''}
+        ${loading ? styles.loading : ''}
+        ${className}
+      `}
     >
-      {children}
+      {loading && <span className={styles.spinner} />}
+      <span className={loading ? styles.invisible : ''}>
+        {children}
+      </span>
     </button>
   );
 };

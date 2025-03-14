@@ -1,98 +1,146 @@
-import React from 'react';
-import useForm from '../../hooks/useForm';
+// src/components/contact/ContactForm.js
+import React, { useState } from 'react';
+import Input from '../common/Form/Input';
+import TextArea from '../common/Form/TextArea';
+import Button from '../common/Button';
 import styles from '../../styles/components/ContactForm.module.css';
 
-const validateForm = (values) => {
-  let errors = {};
-  
-  if (!values.name.trim()) {
-    errors.name = 'Name is required';
-  }
-
-  if (!values.email) {
-    errors.email = 'Email is required';
-  } else if (!/\S+@\S+\.\S+/.test(values.email)) {
-    errors.email = 'Email is invalid';
-  }
-
-  if (!values.message.trim()) {
-    errors.message = 'Message is required';
-  }
-
-  return errors;
-};
-
 const ContactForm = () => {
-  const initialState = { name: '', email: '', message: '' };
-  
-  const { 
-    values, 
-    errors, 
-    isSubmitting, 
-    handleChange, 
-    handleSubmit 
-  } = useForm(initialState, validateForm);
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    subject: '',
+    message: ''
+  });
 
-  const submitForm = async (formData) => {
-    // Simulate API call
-    await new Promise((resolve) => setTimeout(resolve, 1500));
-    console.log('Form submitted:', formData);
+  const [errors, setErrors] = useState({});
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState(null);
+
+  const validateForm = () => {
+    const newErrors = {};
+    
+    if (!formData.name.trim()) {
+      newErrors.name = 'Name is required';
+    }
+
+    if (!formData.email.trim()) {
+      newErrors.email = 'Email is required';
+    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
+      newErrors.email = 'Email is invalid';
+    }
+
+    if (!formData.message.trim()) {
+      newErrors.message = 'Message is required';
+    }
+
+    return newErrors;
+  };
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+    // Clear error when user starts typing
+    if (errors[name]) {
+      setErrors(prev => ({
+        ...prev,
+        [name]: ''
+      }));
+    }
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const newErrors = validateForm();
+
+    if (Object.keys(newErrors).length === 0) {
+      setIsSubmitting(true);
+      setSubmitStatus(null);
+
+      try {
+        // Simulate API call
+        await new Promise(resolve => setTimeout(resolve, 2000));
+        
+        setSubmitStatus({
+          type: 'success',
+          message: 'Thank you for your message! We will get back to you soon.'
+        });
+        setFormData({ name: '', email: '', subject: '', message: '' });
+      } catch (error) {
+        setSubmitStatus({
+          type: 'error',
+          message: 'Something went wrong. Please try again later.'
+        });
+      } finally {
+        setIsSubmitting(false);
+      }
+    } else {
+      setErrors(newErrors);
+    }
   };
 
   return (
-    <form 
-      className={styles.contactForm} 
-      onSubmit={(e) => handleSubmit(e, submitForm)}
-    >
-      <div className={styles.formGroup}>
-        <input
-          type="text"
-          name="name"
-          placeholder="Your Name"
-          value={values.name}
-          onChange={handleChange}
-          className={errors.name ? styles.error : ''}
-        />
-        {errors.name && <span className={styles.errorMessage}>{errors.name}</span>}
-      </div>
+    <div className={styles.formContainer}>
+      <form onSubmit={handleSubmit} className={styles.form}>
+        {submitStatus && (
+          <div className={`${styles.alert} ${styles[submitStatus.type]}`}>
+            {submitStatus.message}
+          </div>
+        )}
 
-      <div className={styles.formGroup}>
-        <input
+        <Input
+          label="Name"
+          name="name"
+          value={formData.name}
+          onChange={handleChange}
+          error={errors.name}
+          required
+          disabled={isSubmitting}
+        />
+
+        <Input
+          label="Email"
           type="email"
           name="email"
-          placeholder="Your Email"
-          value={values.email}
+          value={formData.email}
           onChange={handleChange}
-          className={errors.email ? styles.error : ''}
+          error={errors.email}
+          required
+          disabled={isSubmitting}
         />
-        {errors.email && <span className={styles.errorMessage}>{errors.email}</span>}
-      </div>
 
-      <div className={styles.formGroup}>
-        <textarea
-          name="message"
-          placeholder="Your Message"
-          value={values.message}
+        <Input
+          label="Subject"
+          name="subject"
+          value={formData.subject}
           onChange={handleChange}
-          className={errors.message ? styles.error : ''}
-        ></textarea>
-        {errors.message && <span className={styles.errorMessage}>{errors.message}</span>}
-      </div>
+          disabled={isSubmitting}
+        />
 
-      <button 
-        type="submit" 
-        className={styles.submitButton}
-        disabled={isSubmitting}
-      >
-        {isSubmitting ? 'Sending...' : 'Send Message'}
-      </button>
+        <TextArea
+          label="Message"
+          name="message"
+          value={formData.message}
+          onChange={handleChange}
+          error={errors.message}
+          required
+          disabled={isSubmitting}
+        />
 
-      {errors.submit && (
-        <div className={styles.submitError}>
-          {errors.submit}
-        </div>
-      )}
-    </form>
+        <Button
+          type="submit"
+          variant="primary"
+          loading={isSubmitting}
+          disabled={isSubmitting}
+          fullWidth
+        >
+          {isSubmitting ? 'Sending...' : 'Send Message'}
+        </Button>
+      </form>
+    </div>
   );
 };
 

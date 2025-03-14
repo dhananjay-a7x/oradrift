@@ -1,0 +1,239 @@
+/* src/components/home/IntegrationPartners.module.css */
+.integrations {
+    padding: var(--spacing-2xl) 0;
+    background: var(--background);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 var(--spacing-xl);
+    position: relative;
+    z-index: 1;
+  }
+  
+  .header {
+    text-align: center;
+    margin-bottom: var(--spacing-2xl);
+  }
+  
+  .header h2 {
+    font-size: var(--font-size-4xl);
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-md);
+  }
+  
+  .header p {
+    color: var(--text-secondary);
+    font-size: var(--font-size-lg);
+  }
+  
+  .partnersGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-xl);
+    margin-bottom: var(--spacing-2xl);
+  }
+  
+  .partnerCard {
+    background: var(--surface);
+    border-radius: var(--border-radius-lg);
+    padding: var(--spacing-xl);
+    box-shadow: var(--shadow-md);
+    transition: all var(--transition-normal);
+    cursor: pointer;
+  }
+  
+  .partnerCard:hover {
+    box-shadow: var(--shadow-lg);
+  }
+  
+  .partnerLogo {
+    height: 60px;
+    margin-bottom: var(--spacing-lg);
+    display: flex;
+    align-items: center;
+  }
+  
+  .partnerLogo img {
+    max-height: 100%;
+    max-width: 150px;
+    object-fit: contain;
+  }
+  
+  .partnerCard h3 {
+    font-size: var(--font-size-xl);
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-sm);
+  }
+  
+  .partnerCard p {
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-lg);
+    line-height: 1.6;
+  }
+  
+  .expandedContent {
+    overflow: hidden;
+  }
+  
+  .features {
+    margin-bottom: var(--spacing-lg);
+  }
+  
+  .feature {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-sm);
+    color: var(--text-secondary);
+  }
+  
+  .checkmark {
+    color: var(--primary);
+    font-weight: bold;
+  }
+  
+  .caseStudy {
+    background: var(--background);
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius-md);
+  }
+  
+  .caseStudy h4 {
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-sm);
+  }
+  
+  .result {
+    display: block;
+    color: var(--primary);
+    font-weight: 600;
+    margin: var(--spacing-sm) 0;
+  }
+  
+  .link {
+    color: var(--primary);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    font-weight: 500;
+    transition: all var(--transition-normal);
+  }
+  
+  .link:hover {
+    transform: translateX(5px);
+  }
+  
+  .techStack {
+    background: var(--surface);
+    padding: var(--spacing-2xl);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-md);
+  }
+  
+  .techStack h3 {
+    text-align: center;
+    font-size: var(--font-size-2xl);
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-xl);
+  }
+  
+  .categories {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-xl);
+  }
+  
+  .category h4 {
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-lg);
+    font-size: var(--font-size-lg);
+  }
+  
+  .techGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: var(--spacing-md);
+  }
+  
+  .techItem {
+    background: var(--background);
+    padding: var(--spacing-md);
+    border-radius: var(--border-radius-md);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-sm);
+    transition: all var(--transition-normal);
+  }
+  
+  .techIcon {
+    font-size: var(--font-size-2xl);
+  }
+  
+  .techName {
+    font-size: var(--font-size-sm);
+    color: var(--text-secondary);
+    text-align: center;
+  }
+  
+  .backgroundElements {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+  }
+  
+  .circle1,
+  .circle2 {
+    position: absolute;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    opacity: 0.1;
+  }
+  
+  .circle1 {
+    width: 400px;
+    height: 400px;
+    top: -200px;
+    right: -100px;
+  }
+  
+  .circle2 {
+    width: 300px;
+    height: 300px;
+    bottom: -150px;
+    left: -150px;
+  }
+  
+  .pattern {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(
+      var(--primary) 1px,
+      transparent 1px
+    );
+    background-size: 20px 20px;
+    opacity: 0.05;
+  }
+  
+  @media (max-width: 768px) {
+    .partnersGrid {
+      grid-template-columns: 1fr;
+    }
+  
+    .categories {
+      grid-template-columns: 1fr;
+    }
+  
+    .backgroundElements {
+      display: none;
+    }
+  }

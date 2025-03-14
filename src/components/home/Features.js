@@ -1,30 +1,51 @@
 // src/components/home/Features.js
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useEffect, useRef } from 'react';
+import { useInView } from 'react-intersection-observer';
 import styles from '../../styles/components/Features.module.css';
+
+const FeatureCard = ({ icon, title, description, index }) => {
+  const { ref, inView } = useInView({
+    threshold: 0.2,
+    triggerOnce: true
+  });
+
+  return (
+    <div 
+      ref={ref}
+      className={`${styles.featureCard} ${inView ? styles.animate : ''}`}
+      style={{ animationDelay: `${index * 0.2}s` }}
+    >
+      <div className={styles.iconWrapper}>
+        <span className={styles.icon}>{icon}</span>
+      </div>
+      <h3>{title}</h3>
+      <p>{description}</p>
+      <div className={styles.learnMore}>
+        Learn More
+        <span className={styles.arrow}>→</span>
+      </div>
+    </div>
+  );
+};
 
 const Features = () => {
   const features = [
     {
-      id: 1,
       icon: "⚡",
       title: "Power App Development",
       description: "Custom Power Apps solutions tailored to streamline your business processes and improve efficiency."
     },
     {
-      id: 2,
       icon: "🔄",
       title: "IT Automation",
-      description: "Automated solutions that reduce manual work and increase productivity across your organization."
+      description: "Intelligent automation solutions that reduce manual work and increase productivity."
     },
     {
-      id: 3,
       icon: "💼",
       title: "Small Business Solutions",
       description: "Affordable and scalable solutions designed specifically for small-scale businesses."
     },
     {
-      id: 4,
       icon: "🛠️",
       title: "Custom Integration",
       description: "Seamless integration of various business tools and applications for unified operations."
@@ -33,39 +54,20 @@ const Features = () => {
 
   return (
     <section className={styles.features}>
+      <div className={styles.backgroundElements}>
+        <div className={styles.circle}></div>
+        <div className={styles.dots}></div>
+      </div>
+      
       <div className={styles.container}>
-        <motion.div
-          className={styles.sectionHeader}
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-        >
+        <div className={styles.header}>
           <h2>Our Services</h2>
           <p>Empowering your business with innovative solutions</p>
-        </motion.div>
+        </div>
 
         <div className={styles.featureGrid}>
           {features.map((feature, index) => (
-            <motion.div
-              key={feature.id}
-              className={styles.featureCard}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-            >
-              <div className={styles.iconWrapper}>
-                <span className={styles.icon}>{feature.icon}</span>
-              </div>
-              <h3>{feature.title}</h3>
-              <p>{feature.description}</p>
-              <motion.div 
-                className={styles.learnMore}
-                whileHover={{ x: 5 }}
-                transition={{ duration: 0.2 }}
-              >
-                Learn More →
-              </motion.div>
-            </motion.div>
+            <FeatureCard key={index} {...feature} index={index} />
           ))}
         </div>
       </div>

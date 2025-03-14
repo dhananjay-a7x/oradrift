@@ -1,13 +1,65 @@
-/* src/styles/variables.css */
 :root {
-    --primary: #5f2fc6;
-    --secondary: #00c2ff;
-    --gradient-start: #200c42;
-    --gradient-mid: #4b1984;
-    --gradient-end: #0084b4;
-    --text-light: #ffffff;
-    --text-muted: #b3b3e6;
-    --background-dark: #0a0a23;
-    --card-bg: rgba(30, 20, 60, 0.6);
-    --highlight: #ff00ff;
-  }
+  /* Color Palette */
+  --primary: #5f2fc6;
+  --primary-light: #7b4dd1;
+  --primary-dark: #4a1d9e;
+  --secondary: #00c2ff;
+  --secondary-light: #33cfff;
+  --secondary-dark: #0098cc;
+  
+  /* Neutral Colors */
+  --background: #f8f9fc;
+  --surface: #ffffff;
+  --text-primary: #1a1a2e;
+  --text-secondary: #4a4a6a;
+  --text-tertiary: #8888a0;
+  
+  /* Gradients */
+  --gradient-primary: linear-gradient(135deg, var(--primary), var(--secondary));
+  --gradient-surface: linear-gradient(135deg, var(--surface), #f0f2f5);
+  
+  /* Spacing */
+  --spacing-xs: 0.25rem;  /* 4px */
+  --spacing-sm: 0.5rem;   /* 8px */
+  --spacing-md: 1rem;     /* 16px */
+  --spacing-lg: 1.5rem;   /* 24px */
+  --spacing-xl: 2rem;     /* 32px */
+  --spacing-2xl: 3rem;    /* 48px */
+  
+  /* Typography */
+  --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-md: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.25rem;
+  --font-size-2xl: 1.5rem;
+  --font-size-3xl: 2rem;
+  --font-size-4xl: 2.5rem;
+  
+  /* Borders */
+  --border-radius-sm: 4px;
+  --border-radius-md: 8px;
+  --border-radius-lg: 12px;
+  --border-radius-xl: 16px;
+  --border-radius-full: 9999px;
+  
+  /* Shadows */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  
+  /* Transitions */
+  --transition-fast: 150ms ease;
+  --transition-normal: 250ms ease;
+  --transition-slow: 350ms ease;
+  
+  /* Z-index */
+  --z-header: 1000;
+  --z-modal: 2000;
+  --z-tooltip: 3000;
+  
+  /* Layout */
+  --container-width: 1200px;
+  --header-height: 70px;
+}
