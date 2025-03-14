@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, HashRouter } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 import ScrollProgress from './components/common/ScrollProgress';
 import ScrollToTop from './components/common/ScrollToTop';
@@ -16,7 +16,7 @@ import './styles/global.css';
 
 function App() {
   return (
-    <Router basename={process.env.PUBLIC_URL}>
+    <HashRouter>
       <ScrollProgress />
       <Header />
       <main>
@@ -33,7 +33,7 @@ function App() {
       </main>
       <Footer />
       <ScrollToTop />
-    </Router>
+    </HashRouter>
   );
 }
 
