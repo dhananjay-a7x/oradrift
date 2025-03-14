@@ -1,17 +1,25 @@
 {
   "files": {
-    "main.css": "https://dhananjay-a7x.github.io/oradrift/static/css/main.86445275.css",
-    "main.js": "https://dhananjay-a7x.github.io/oradrift/static/js/main.93447aba.js",
+    "main.css": "https://dhananjay-a7x.github.io/oradrift/static/css/main.e26a9ea5.css",
+    "main.js": "https://dhananjay-a7x.github.io/oradrift/static/js/main.d216c20a.js",
+    "static/media/project2.jpg": "https://dhananjay-a7x.github.io/oradrift/static/media/project2.6e7fc4242b8c9d2f03d3.jpg",
+    "static/media/case-study-2.jpg": "https://dhananjay-a7x.github.io/oradrift/static/media/case-study-2.0bde2db66f11733957c3.jpg",
+    "static/media/case-study-1.jpg": "https://dhananjay-a7x.github.io/oradrift/static/media/case-study-1.56c15df5947e63708d77.jpg",
+    "static/media/project1.jpg": "https://dhananjay-a7x.github.io/oradrift/static/media/project1.2c9dd2d670cf6c3204d6.jpg",
+    "static/media/team1.webp": "https://dhananjay-a7x.github.io/oradrift/static/media/team1.760fba7f96cdada079dc.webp",
+    "static/media/case-study-4.jpg": "https://dhananjay-a7x.github.io/oradrift/static/media/case-study-4.bc6af477ac6a974f92a3.jpg",
+    "static/media/team2.jpg": "https://dhananjay-a7x.github.io/oradrift/static/media/team2.94978bfbee575073b9cc.jpg",
+    "static/media/case-study-3.jpg": "https://dhananjay-a7x.github.io/oradrift/static/media/case-study-3.d4e6c0cfcc5f897df833.jpg",
     "static/media/slick.svg": "https://dhananjay-a7x.github.io/oradrift/static/media/slick.2630a3e3eab21c607e21.svg",
     "static/media/slick.eot": "https://dhananjay-a7x.github.io/oradrift/static/media/slick.a4e97f5a2a64f0ab1323.eot",
     "static/media/slick.ttf": "https://dhananjay-a7x.github.io/oradrift/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/slick.woff": "https://dhananjay-a7x.github.io/oradrift/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "https://dhananjay-a7x.github.io/oradrift/index.html",
-    "main.86445275.css.map": "https://dhananjay-a7x.github.io/oradrift/static/css/main.86445275.css.map",
-    "main.93447aba.js.map": "https://dhananjay-a7x.github.io/oradrift/static/js/main.93447aba.js.map"
+    "main.e26a9ea5.css.map": "https://dhananjay-a7x.github.io/oradrift/static/css/main.e26a9ea5.css.map",
+    "main.d216c20a.js.map": "https://dhananjay-a7x.github.io/oradrift/static/js/main.d216c20a.js.map"
   },
   "entrypoints": [
-    "static/css/main.86445275.css",
-    "static/js/main.93447aba.js"
+    "static/css/main.e26a9ea5.css",
+    "static/js/main.d216c20a.js"
   ]
 }
