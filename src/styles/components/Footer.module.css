@@ -1,0 +1,131 @@
+/* src/styles/components/Footer.module.css */
+.footer {
+  background: var(--primary);
+  color: var(--text-light);
+  padding: 4rem 0 2rem;
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+}
+
+.footerGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+
+.companyInfo h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.companyInfo p {
+  opacity: 0.8;
+}
+
+.links h4,
+.contact h4,
+.social h4 {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.links h4::after,
+.contact h4::after,
+.social h4::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 40px;
+  height: 2px;
+  background: var(--secondary);
+}
+
+.links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.links ul li {
+  margin-bottom: 0.8rem;
+}
+
+.links a {
+  color: var(--text-light);
+  text-decoration: none;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+}
+
+.links a:hover {
+  opacity: 1;
+}
+
+.contact p {
+  margin-bottom: 0.8rem;
+  opacity: 0.8;
+}
+
+.socialLinks {
+  display: flex;
+  gap: 1rem;
+}
+
+.socialLinks a {
+  color: var(--text-light);
+  text-decoration: none;
+  opacity: 0.8;
+  transition: all 0.3s ease;
+  padding: 8px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+}
+
+.socialLinks a:hover {
+  opacity: 1;
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+}
+
+.copyright {
+  text-align: center;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+  .footer {
+    padding: 3rem 0 1.5rem;
+  }
+
+  .footerGrid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .companyInfo,
+  .links,
+  .contact,
+  .social {
+    text-align: center;
+  }
+
+  .links h4::after,
+  .contact h4::after,
+  .social h4::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .socialLinks {
+    justify-content: center;
+  }
+}

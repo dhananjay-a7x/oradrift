@@ -1,0 +1,213 @@
+/* src/styles/components/Features.module.css */
+.features {
+  padding: 80px 0;
+  background: linear-gradient(to bottom, var(--background), #ffffff);
+  position: relative;
+  overflow: hidden;
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+}
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 60px;
+  position: relative;
+}
+
+.sectionHeader h2 {
+  font-size: 2.5rem;
+  color: var(--primary);
+  margin-bottom: 15px;
+  position: relative;
+  display: inline-block;
+}
+
+.sectionHeader h2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: var(--secondary);
+  border-radius: 2px;
+}
+
+.sectionHeader p {
+  font-size: 1.2rem;
+  color: var(--text-muted);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.featureGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.featureCard {
+  background: white;
+  border-radius: 15px;
+  padding: 30px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.featureCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(to right, var(--primary), var(--secondary));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.featureCard:hover {
+  transform: translateY(-5px);
+}
+
+.featureCard:hover::before {
+  transform: scaleX(1);
+}
+
+.iconWrapper {
+  width: 70px;
+  height: 70px;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  transition: transform 0.3s ease;
+}
+
+.featureCard:hover .iconWrapper {
+  transform: scale(1.1) rotate(5deg);
+}
+
+.icon {
+  font-size: 2rem;
+  color: white;
+}
+
+.featureCard h3 {
+  font-size: 1.5rem;
+  color: var(--primary);
+  margin-bottom: 15px;
+}
+
+.featureCard p {
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.learnMore {
+  color: var(--primary);
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  transition: color 0.3s ease;
+}
+
+.learnMore:hover {
+  color: var(--secondary);
+}
+
+/* Add subtle background pattern */
+.features::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, var(--primary) 25%, transparent 25%),
+              linear-gradient(-45deg, var(--primary) 25%, transparent 25%),
+              linear-gradient(45deg, transparent 75%, var(--primary) 75%),
+              linear-gradient(-45deg, transparent 75%, var(--primary) 75%);
+  background-size: 20px 20px;
+  opacity: 0.02;
+}
+
+/* Animation classes */
+.featureCard {
+  opacity: 0;
+  animation: fadeIn 0.5s ease forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Stagger animation for cards */
+.featureCard:nth-child(1) { animation-delay: 0.1s; }
+.featureCard:nth-child(2) { animation-delay: 0.2s; }
+.featureCard:nth-child(3) { animation-delay: 0.3s; }
+.featureCard:nth-child(4) { animation-delay: 0.4s; }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .features {
+    padding: 60px 0;
+  }
+
+  .sectionHeader h2 {
+    font-size: 2rem;
+  }
+
+  .sectionHeader p {
+    font-size: 1rem;
+  }
+
+  .featureGrid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .featureCard {
+    padding: 25px;
+  }
+
+  .iconWrapper {
+    width: 60px;
+    height: 60px;
+  }
+
+  .icon {
+    font-size: 1.5rem;
+  }
+}
+
+/* Optional: Add hover effect for the entire section */
+.features:hover .featureCard {
+  opacity: 0.7;
+  transform: scale(0.98);
+}
+
+.features:hover .featureCard:hover {
+  opacity: 1;
+  transform: scale(1) translateY(-5px);
+}

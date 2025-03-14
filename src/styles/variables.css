@@ -1,0 +1,13 @@
+/* src/styles/variables.css */
+:root {
+    --primary: #5f2fc6;
+    --secondary: #00c2ff;
+    --gradient-start: #200c42;
+    --gradient-mid: #4b1984;
+    --gradient-end: #0084b4;
+    --text-light: #ffffff;
+    --text-muted: #b3b3e6;
+    --background-dark: #0a0a23;
+    --card-bg: rgba(30, 20, 60, 0.6);
+    --highlight: #ff00ff;
+  }

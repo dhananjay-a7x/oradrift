@@ -1,0 +1,49 @@
+:root {
+    --primary: #5f2fc6;
+    --secondary: #00c2ff;
+    --text-light: #ffffff;
+    --text-dark: #333333;
+    --background: #f5f5f5;
+    --spacing-sm: 8px;
+    --spacing-md: 16px;
+    --spacing-lg: 24px;
+    --spacing-xl: 32px;
+    --container-padding: 2rem; /* 32px padding on sides */
+    --max-width: 1200px;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    color: var(--text-dark);
+    background: var(--background);
+  }
+  
+  .container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 var(--container-padding);
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* For larger screens, increase padding */
+  @media (min-width: 1400px) {
+    :root {
+      --container-padding: 4rem; /* 64px padding on sides for larger screens */
+    }
+  }
+
+  /* For mobile screens */
+  @media (max-width: 768px) {
+    :root {
+      --container-padding: 1rem; /* 16px padding on sides for mobile */
+    }
+  }
+  

@@ -1,0 +1,38 @@
+.home {
+    min-height: 100vh;
+  }
+  
+  .section {
+    padding: var(--spacing-xl) 0;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+  }
+  
+  .heroSection {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: var(--text-light);
+    text-align: center;
+    padding: calc(var(--spacing-xl) * 2) 0;
+  }
+  
+  .featuresSection {
+    background: var(--background);
+    padding: var(--spacing-xl) 0;
+  }
+  
+  .ctaSection {
+    background: var(--primary);
+    color: var(--text-light);
+    text-align: center;
+    padding: var(--spacing-xl) 0;
+  }
+  
+  @media (max-width: 768px) {
+    .section {
+      padding: var(--spacing-lg) 0;
+    }
+  }

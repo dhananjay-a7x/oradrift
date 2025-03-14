@@ -1,0 +1,43 @@
+/* Mobile First Approach */
+@media screen and (max-width: 768px) {
+    .container {
+      padding: 0 var(--spacing-md);
+    }
+  
+    .hero h1 {
+      font-size: 2.5rem;
+    }
+  
+    .featureGrid {
+      grid-template-columns: 1fr;
+    }
+  
+    .nav {
+      display: none;
+      position: fixed;
+      top: 80px;
+      left: 0;
+      right: 0;
+      background: white;
+      padding: var(--spacing-md);
+    }
+  
+    .nav.active {
+      display: block;
+    }
+  
+    .nav ul {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .menuButton {
+      display: block;
+    }
+  }
+  
+  @media screen and (min-width: 769px) and (max-width: 1024px) {
+    .featureGrid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
