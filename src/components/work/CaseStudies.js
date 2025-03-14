@@ -161,30 +161,25 @@ const CaseStudies = () => {
     dots: true,
     infinite: false,
     speed: 500,
-    slidesToShow: isMobile ? 1 : 3,
+    slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: false,
-    pauseOnHover: true,
-    beforeChange: (oldIndex, newIndex) => {
-      setCurrentSlide(newIndex);
-    },
+    arrows: true,
     responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 1,
-        }
-      },
       {
         breakpoint: 768,
         settings: {
           slidesToShow: 1,
-          slidesToScroll: 1
+          slidesToScroll: 1,
+          infinite: false,
+          dots: true,
+          arrows: true,
+          adaptiveHeight: true,
+          centerMode: false
         }
       }
     ]
-  };
+  };  
 
   // Render results function
   const renderResults = (results) => (

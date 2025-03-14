@@ -8,6 +8,8 @@
     max-width: var(--container-width);
     margin: 0 auto;
     padding: 0 var(--spacing-xl);
+    overflow: visible; /* Change from hidden if present */
+    position: relative; /* Add this */
   }
   
   .header {
@@ -30,6 +32,8 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: var(--spacing-xl);
+    position: relative; /* Add this */
+    width: 100%; /* Add this */
   }
   
   .studyCard {
@@ -201,22 +205,70 @@
   }
   
   @media (max-width: 768px) {
+    .studyCard {
+      width: 100%;
+      margin: 0 auto;
+      display: block; /* Add this */
+    }
+    
     .studiesGrid {
       grid-template-columns: 1fr;
+      padding: 0;
+      margin: 0;
+      display: block; /* Add this */
     }
-  
-    .results {
-      grid-template-columns: 1fr;
+    
+    /* Fix slider visibility */
+    :global(.slick-slider) {
+      width: 100% !important;
+      display: block !important;
+      visibility: visible !important;
     }
-
-    .studiesGrid {
-      margin: 0 -10px;
+    
+    :global(.slick-list) {
+      overflow: visible !important;
+      visibility: visible !important;
     }
-  
-    .studiesGrid :global(.slick-slide) {
-      padding: 0 10px;
+    
+    :global(.slick-track) {
+      display: flex !important;
+      visibility: visible !important;
+    }
+    
+    :global(.slick-slide) {
+      display: block !important;
+      visibility: visible !important;
+    }
+    
+    /* Ensure container doesn't hide content */
+    .container {
+      overflow: visible !important;
+      padding: 0 20px;
+      width: 100%;
     }
   }
+  
+  @media (max-width: 768px) {
+    .studyCard {
+      width: 100%;
+      margin: 0 auto;
+    }
+    
+    .studiesGrid {
+      padding: 0 20px;
+    }
+    
+    /* Ensure slider container is visible */
+    :global(.slick-slider) {
+      width: 100%;
+      visibility: visible;
+    }
+    
+    :global(.slick-list) {
+      overflow: visible;
+    }
+  }
+  
   .navButton {
     position: absolute;
     top: 50%;
