@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "https://github.com/dhananjay-a7x/oradrift/static/css/main.61414455.css",
-    "main.js": "https://github.com/dhananjay-a7x/oradrift/static/js/main.2d1fa103.js",
-    "static/media/slick.svg": "https://github.com/dhananjay-a7x/oradrift/static/media/slick.2630a3e3eab21c607e21.svg",
-    "static/media/slick.eot": "https://github.com/dhananjay-a7x/oradrift/static/media/slick.a4e97f5a2a64f0ab1323.eot",
-    "static/media/slick.ttf": "https://github.com/dhananjay-a7x/oradrift/static/media/slick.c94f7671dcc99dce43e2.ttf",
-    "static/media/slick.woff": "https://github.com/dhananjay-a7x/oradrift/static/media/slick.295183786cd8a1389865.woff",
-    "index.html": "https://github.com/dhananjay-a7x/oradrift/index.html",
-    "main.61414455.css.map": "https://github.com/dhananjay-a7x/oradrift/static/css/main.61414455.css.map",
-    "main.2d1fa103.js.map": "https://github.com/dhananjay-a7x/oradrift/static/js/main.2d1fa103.js.map"
+    "main.css": "https://dhananjay-a7x.github.io/oradrift/static/css/main.b8b32bd8.css",
+    "main.js": "https://dhananjay-a7x.github.io/oradrift/static/js/main.2d1fa103.js",
+    "static/media/slick.svg": "https://dhananjay-a7x.github.io/oradrift/static/media/slick.2630a3e3eab21c607e21.svg",
+    "static/media/slick.eot": "https://dhananjay-a7x.github.io/oradrift/static/media/slick.a4e97f5a2a64f0ab1323.eot",
+    "static/media/slick.ttf": "https://dhananjay-a7x.github.io/oradrift/static/media/slick.c94f7671dcc99dce43e2.ttf",
+    "static/media/slick.woff": "https://dhananjay-a7x.github.io/oradrift/static/media/slick.295183786cd8a1389865.woff",
+    "index.html": "https://dhananjay-a7x.github.io/oradrift/index.html",
+    "main.b8b32bd8.css.map": "https://dhananjay-a7x.github.io/oradrift/static/css/main.b8b32bd8.css.map",
+    "main.2d1fa103.js.map": "https://dhananjay-a7x.github.io/oradrift/static/js/main.2d1fa103.js.map"
   },
   "entrypoints": [
-    "static/css/main.61414455.css",
+    "static/css/main.b8b32bd8.css",
     "static/js/main.2d1fa103.js"
   ]
 }
