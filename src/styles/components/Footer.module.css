@@ -3,7 +3,7 @@
   position: relative;
   background: linear-gradient(135deg, var(--primary), var(--secondary));
   color: var(--text-light);
-  padding: var(--spacing-2xl) 0 var(--spacing-xl);
+  padding: 2rem var(--spacing-xl) var(--spacing-xl); /* Modified this line to increase top padding */
   overflow: hidden;
 }
 

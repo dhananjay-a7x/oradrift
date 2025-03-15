@@ -8,7 +8,7 @@ import IntegrationPartners from '../components/home/IntegrationPartners';
 import ScrollAnimation from '../components/common/ScrollAnimation';
 import ProcessFlow from '../components/home/ProcessFlow';
 import Skills from '../components/about/Skills';
-import Timeline from '../components/about/Timeline';
+import TestimonialsSlider from '../components/home/TestimonialsSlider';
 import CaseStudies from '../components/work/CaseStudies';
 
 const Home = () => {
@@ -84,9 +84,7 @@ const Home = () => {
       
             <Skills/>
 
-      <ScrollAnimation>
-        <Timeline/>
-      </ScrollAnimation>      
+       <TestimonialsSlider/> 
 
       {/* Featured Case Study Section */}
       <ScrollAnimation>
